@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* ... (التنسيقات الخاصة بك هنا) ... */
+
+        /* تنسيق لوحة التحكم */
+        .control-panel {
+            margin: 20px 80px 0px 0px;
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            width: 292px;
+            border-radius: 24px;
+            padding: 29px;
+            display: grid;
+            justify-items: end;
+            align-items: center;
+        }
+        .control-panel label {
+            display: block;
+            margin: 10px 0 5px;
+            font-family: system-ui;
+            font-size: 13px;
+        }
+        .control-panel input, .control-panel select {
+            width: 232px;
+            padding: 8px;
+            margin-bottom: 10px;
+            background: #121212;
+            border: none;
+            text-align: right;
+            color: white;
+            font-family: system-ui;
+            border-radius: 24px;
+            box-shadow: -2px 3px 4px 0px #ff7900;
+        }
+        .control-panel button {
+            padding: 11px 52px;
+            background-color: #ff7903;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 24px;
+            font-family: system-ui;
+            margin-top: 21px;
+            margin-right: 38px;
+            transition: 0.5s;
+        }
+        .control-panel button:hover {
+            box-shadow: -2px 3px 14px 18px #ff790080;
+            transition: 0.5s;
+            background: black;
+        }
+
+        .position{
+        position: absolute;
+        z-index: 99999;
+        left: 563px;
+        opacity: 0.3;
+    }
+
+    @font-face {
+    font-family: myFirstFont;
+    src: url(LibreFranklin-ExtraBold.ttf);
+    }
+
+    *{
+        padding: 0px;
+        margin: 0px;
+    }
+    body{
+        background: #333;
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .small{
+        font-weight: 100;
+    }
+    p{
+        
+    }
+    .img{
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+    }
+    .content{
+        position: absolute;
+        z-index: 999;
+        width: 623px;
+        height: 96%;
+        background: white;
+        top: 50%;
+        left: 40%;
+        transform: translate(-50%, -50%);
+        padding: 34px 113px 0px 58px;
+    }
+    .trans{
+        font-family: Tahoma;
+        font-size: 15.5px;
+        font-weight: bold;
+        color: #FF7801;
+    }
+    .bd{
+        font-family: myFirstFont;
+        display: flex;
+        flex-direction: row-reverse;
+        font-size: 15.5px;
+        transform: translate(63px, 1px);
+    }
+    .bd p{
+        margin-right: 10px;
+        color: #999999;
+    }
+    .date{
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin-top: 15px;
+    }
+    .linet{
+        display: grid;
+        font-size: 15px;
+        margin-top: 34px;
+        margin-right: 4px;
+        font-family: tahoma;
+        justify-content: end;
+        justify-items: end;
+        color: #999999;
+    }
+    .interBox{  
+        display: flex;
+        height: 337px;
+        flex-direction: row-reverse;
+    }
+    .titels{
+        font-family: Tahoma;
+        font-weight: 900;
+        color: #000000;
+        display: grid;
+        justify-items: end;
+        align-content: space-around;
+    }
+    .info{
+        font-family: Tahoma;
+        font-weight: 900;
+        color: #000000;
+        display: grid;
+        justify-items: end;
+        align-content: space-around;
+        font-size: 15px;
+        margin-right: 16px;
+    }
+    .total{
+        font-family: Tahoma;
+        font-weight: 900;
+        color: #000000;
+        display: flex;
+        font-size: 15px;
+        margin-right: 5px;
+        flex-direction: row-reverse;
+        margin-top: 6px;
+    }
+    </style>
+</head>
+<body>
+    <!-- لوحة التحكم -->
+    <div class="control-panel">
+        <label for="transMon">نوع التحويل المالي:</label>
+        <select id="transMon">
+            <option value="تحويل مالي إلي مزود آخر">تحويل مالي إلي مزود آخر</option>
+            <option value="تحويل مالي">تحويل مالي</option>
+        </select>
+
+        <label for="CalcWat">الوقت:</label>
+        <input type="text" id="CalcWat" value="6:04:07" placeholder="الوقت">
+
+        <label for="MoNi">AM/PM:</label>
+        <select id="MoNi">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+        </select>
+
+        <label for="Mont">الشهر:</label>
+        <select id="Mont">
+            <option value="أغسطس">أغسطس</option>
+            <option value="يوليو">يوليو</option>
+        </select>
+
+        <label for="Date">التاريخ:</label>
+        <input type="text" id="Date" value="13,2024" placeholder="التاريخ">
+
+        <label for="NameOwn">اسم العميل:</label>
+        <input type="text" id="NameOwn" value="ALMUBARAK MOHAMMAD" placeholder="اسم العميل">
+
+        <label for="transMon2">نوع التحويل المالي الثاني:</label>
+        <select id="transMon2">
+            <option value="تحويل مالي إلي مزود آخر">تحويل مالي إلي مزود آخر</option>
+            <option value="تحويل مالي">تحويل مالي</option>
+        </select>
+
+        <label for="nameUser">اسم المستقبل:</label>
+        <input type="text" id="nameUser" value="KHALED OMAR MOH D TAISSER BATAYNEH" placeholder="اسم المستقبل">
+
+        <label for="Mo1">القيمة 1:</label>
+        <input type="text" id="Mo1" value="0.000" placeholder="القيمة">
+
+        <label for="Mo2">القيمة 2:</label>
+        <input type="text" id="Mo2" value="0.000" placeholder="القيمة">
+
+        <!-- زر التنفيذ -->
+        <button id="applyValues">تطبيق القيم</button>
+    </div>
+
+    <!-- content form !! !! !! -->
+    <div class="content">
+        <!-- IMG -->
+        <div class="img"><img src="logo.png"></div>
+        <!-- Date and time -->
+        <div class="date">
+            <p id="transMonDisplay" class="trans">تحويل مالي إلي مزود خدمة آخر</p>
+            <div class="bd">
+                <p id="CalcWatDisplay" class="watch">6:04:07</p>
+                <p id="MoNiDisplay" class="AP" style="font-size: 14.5px;">PM</p>
+                <p id="MontDisplay" class="month" style="font-family: Tahoma;font-weight: bold;">أغسطس</p>
+                <p id="DateDisplay" class="Day">13,2024</p>
+            </div>
+        </div>
+        <!-- line code -->
+         <div class="linet">
+            <p id="ashway">--------------------------------------------------- OJM-PAY-20240812174840657115098005</p>
+            <p>-------</p>
+        </div>
+        <!-- INTER -->
+         <div class="interBox">
+            <div class="titels">
+                <p>:اسم العميل</p>
+                <p>:نوع الحركة</p>
+                <p>:اسم المستقبل</p>
+                <p>:القيمة</p>
+                <p>:رسوم الخدمة</p>
+            </div>
+            <div class="info">
+                <p id="NameOwnDisplay">ALMUBARAK MOHAMMAD</p>
+                <p id="transMon2Display">تحويل مالي</p>
+                <p id="nameUserDisplay">KHALED OMAR MOH D TAISSER BATAYNEH</p>
+                <p id="Mo1Display" class="small">0.000</p>
+                <p class="small">0.000</p>
+            </div>
+         </div>
+         <!-- line -->
+          <p style="text-align: right;color: #999999;transform: translate(-5px, -10px);">---------------------------------------------------------------------------------------------------------</p>
+         <!-- -->
+          <div class="total">
+            <p style="color: #ff7903;">:المجموع الكلي</p>
+            <p id="Mo2Display" class="small" style="padding-right: 18px;">0.000</p>
+          </div>
+    </div>
+
+    <script>
+        // زر التنفيذ
+        document.getElementById('applyValues').addEventListener('click', updateValues);
+
+        function updateValues() {
+            document.getElementById('transMonDisplay').innerText = document.getElementById('transMon').value;
+            document.getElementById('CalcWatDisplay').innerText = document.getElementById('CalcWat').value;
+            document.getElementById('MoNiDisplay').innerText = document.getElementById('MoNi').value;
+            document.getElementById('MontDisplay').innerText = document.getElementById('Mont').value;
+            document.getElementById('DateDisplay').innerText = document.getElementById('Date').value;
+            document.getElementById('NameOwnDisplay').innerText = document.getElementById('NameOwn').value;
+            document.getElementById('transMon2Display').innerText = document.getElementById('transMon2').value;
+            document.getElementById('nameUserDisplay').innerText = document.getElementById('nameUser').value;
+            document.getElementById('Mo1Display').innerText = document.getElementById('Mo1').value;
+            document.getElementById('Mo2Display').innerText = document.getElementById('Mo2').value;
+        }
+    </script>
+</body>
+</html>
